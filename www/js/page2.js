@@ -23,3 +23,12 @@ function setScale(scaleFactor) {
 
 	$('body').css('font-size', fontSize + '%');
 }
+
+function updateStatus(e) {
+	var a = document.getElementById("status");
+	a.innerHTML = "<p>" + ($(document).scrollTop() / ($(document).height() - $(window).height())) + "</p>";
+}
+
+$(document).ready(function() {
+	$(window).on('scroll', updateStatus);
+});
