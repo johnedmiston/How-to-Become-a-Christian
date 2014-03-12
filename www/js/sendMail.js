@@ -10,3 +10,10 @@ function sendResponse() {
 		}
 	);
 }
+
+function setScale(scaleFactor) {
+	var scaleSource = $('body').width();
+	var fontSize = scaleSource * scaleFactor;
+
+	$('body').css('font-size', fontSize + '%');
+}

@@ -10,13 +10,32 @@
 		
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
 		<script type="text/javascript" src="js/sendMail.js"></script>
 		
 		<script type="text/javascript">
 			window.onload = function() {
+				// Initializing the email sending event
 				var a = document.getElementById("sendLink");
 				a.onclick = function() {
 					sendResponse();
+					return false;
+				}
+				
+				// Initializing the font size changing events
+				a = document.getElementById("font1");
+				a.onclick = function() {
+					setScale(0.1);
+					return false;
+				}
+				a = document.getElementById("font2");
+				a.onclick = function() {
+					setScale(0.15);
+					return false;
+				}
+				a = document.getElementById("font3");
+				a.onclick = function() {
+					setScale(0.2);
 					return false;
 				}
 			}
@@ -29,5 +48,10 @@
         <h1>This is Page 2</h1>
 		<p>Words!</p>
 		<a id="sendLink" href="#">Send Response</a>
+		<p>Choose Font Size: 
+			<a id="font1" href="#">1</a>
+			<a id="font2" href="#">2</a>
+			<a id="font3" href="#">3</a>
+		</p>
     </body>
 </html>
