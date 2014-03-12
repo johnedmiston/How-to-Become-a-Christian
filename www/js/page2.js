@@ -26,9 +26,42 @@ function setScale(scaleFactor) {
 
 function updateStatus(e) {
 	var a = document.getElementById("status");
-	a.innerHTML = "<p>" + ($(document).scrollTop() / ($(document).height() - $(window).height())) + "</p>";
+	var percent = $(document).height() - $(window).height() > 0 ?
+			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
+	a.innerHTML = "<p>" + percent + "</p>";
+}
+
+function changePage(e) {
+	var a = document.getElementById("status");
+	a.innerHTML = "<p>" + ("SIEOW") + "</p>";
+	$("#content").toggle().attr("data-html", "02%20ChristianStarterKit");
+	loadDoc();
+	$("#content").toggle();
+	$(document).scrollTop(0);
 }
 
 $(document).ready(function() {
-	$(window).on('scroll', updateStatus);
+	$(window).on("scroll", updateStatus);
+	$("#content").on("swipeleft", changePage);
+	$("#content").on('movestart', function(e) {
+		if ((e.distX > e.distY && e.distX < -e.distY) ||
+		(e.distX < e.distY && e.distX > -e.distY)) {
+			e.preventDefault();
+		}
+	});
+	
+	loadDoc();
 });
+
+// From https://gist.github.com/tsi/5137145
+// By tsi
+function loadDoc() { 
+	var a = document.getElementById("status");
+	a.innerHTML = "<p>" + ("ser") + "</p>";
+	// Load external contents
+	$("[data-html]").each(function() {
+		el = $(this);
+		var src = "content/" + $(this).attr("data-html") + ".html";
+		el.load(src);
+	});
+}
