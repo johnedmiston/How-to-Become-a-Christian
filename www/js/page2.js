@@ -1,7 +1,8 @@
 // Global Variables
 // ****************************************************************************
 var permenantStorage = window.localStorage;
-var currentPage;
+var currentPage; // Current page the user is viewing
+var percent; // How far from the top the user has scrolled
 
 var size = {
 	SMALL: 0.1,
@@ -65,11 +66,17 @@ function setScale(scaleFactor) {
 	var fontSize = scaleSource * scaleFactor;
 
 	$('body').css('font-size', fontSize + '%');
+	
+	if (percent == null) {
+		percent = 0;
+	}
+	
+	$(document).scrollTop(percent);
 }
 
 function updateStatus(e) {
 	var a = document.getElementById("status");
-	var percent = $(document).height() - $(window).height() > 0 ?
+	percent = $(document).height() - $(window).height() > 0 ?
 			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
 	a.innerHTML = "<p>" + percent + "</p>";
 }
@@ -86,8 +93,8 @@ function changePage() {
 function loadDoc() { 
 	// Load external contents
 	$("[data-html]").each(function() {
-		el = $(this);
+		element = $(this);
 		var src = "content/" + $(this).attr("data-html") + ".html";
-		el.load(src);
+		element.load(src);
 	});
 }
