@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		
+		<!-- CSS Stylesheets -->
+		
+		<!-- JS Scripts -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/sendMail.js"></script>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				var a = document.getElementById("sendLink");
+				a.onclick = function() {
+					sendResponse();
+					return false;
+				}
+			}
+		</script>
+		
+        <title>Page 2</title>
+    </head>
+	
+    <body>
+        <h1>This is Page 2</h1>
+		<p>Words!</p>
+		<a id="sendLink" href="#">Send Response</a>
+    </body>
+</html>
