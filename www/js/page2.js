@@ -1,3 +1,52 @@
+// Global Variables
+// ****************************************************************************
+var permenantStorage = window.localStorage;
+var currentPage;
+
+var size = {
+	SMALL: 0.1,
+	MEDIUM: 0.2,
+	LARGE: 0.3
+};
+
+// Document initialization wars
+// ****************************************************************************
+$(document).ready(function() {
+	currentPage = permenantStorage.getItem("page");
+	if (currentPage == null) {
+		currentPage = 1;
+	}
+	changePage();
+	
+	$(window).on("scroll", updateStatus);
+	$("#content").on("swipeleft", function(e) {
+		currentPage++;
+		if (currentPage > 12) {
+			currentPage = 12;
+		}
+		else {
+			changePage();
+		}
+	});
+	$("#content").on("swiperight", function(e) {
+		currentPage--;
+		if (currentPage < 1) {
+			currentPage = 1;
+		}
+		else {
+			changePage();
+		}
+	});
+	$("#content").on('movestart', function(e) {
+		if ((e.distX > e.distY && e.distX < -e.distY) ||
+		(e.distX < e.distY && e.distX > -e.distY)) {
+			e.preventDefault();
+		}
+	});
+});
+
+// Support functions
+// ****************************************************************************
 function sendResponse() {
 	window.plugin.email.isServiceAvailable(
 		function (isAvailable) {
@@ -10,12 +59,6 @@ function sendResponse() {
 		}
 	);
 }
-
-var size = {
-	SMALL: 0.1,
-	MEDIUM: 0.2,
-	LARGE: 0.3
-};
 
 function setScale(scaleFactor) {
 	var scaleSource = $('body').width();
@@ -31,33 +74,16 @@ function updateStatus(e) {
 	a.innerHTML = "<p>" + percent + "</p>";
 }
 
-function changePage(e) {
-	var a = document.getElementById("status");
-	a.innerHTML = "<p>" + ("SIEOW") + "</p>";
-	$("#content").toggle().attr("data-html", "02%20ChristianStarterKit");
+function changePage() {
+	$("#content").toggle().attr("data-html", currentPage + "%20ChristianStarterKit");
 	loadDoc();
 	$("#content").toggle();
 	$(document).scrollTop(0);
 }
 
-$(document).ready(function() {
-	$(window).on("scroll", updateStatus);
-	$("#content").on("swipeleft", changePage);
-	$("#content").on('movestart', function(e) {
-		if ((e.distX > e.distY && e.distX < -e.distY) ||
-		(e.distX < e.distY && e.distX > -e.distY)) {
-			e.preventDefault();
-		}
-	});
-	
-	loadDoc();
-});
-
 // From https://gist.github.com/tsi/5137145
 // By tsi
 function loadDoc() { 
-	var a = document.getElementById("status");
-	a.innerHTML = "<p>" + ("ser") + "</p>";
 	// Load external contents
 	$("[data-html]").each(function() {
 		el = $(this);
