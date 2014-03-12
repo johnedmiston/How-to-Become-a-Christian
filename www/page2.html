@@ -14,13 +14,9 @@
 		
 		<script type="text/javascript">
 			window.onload = function() {
-				var a = document.getElementById("mylink");
-				
-				a.innerHTML = "<p>hey</p>";
+				var a = document.getElementById("availabilityLink");
 				a.onclick = function() {
-					a.innerHTML = "<p>wazzup</p>";
 					check();
-					a.innerHTML = "<p>'sup</p>";
 					return false;
 				}
 			}
@@ -32,6 +28,6 @@
     <body>
         <h1>This is Page 2</h1>
 		<p>Words!</p>
-		<a id="mylink" href="#">Check Email Availability</a>
+		<a id="availabilityLink" href="#">Check Email Availability</a>
     </body>
 </html>
