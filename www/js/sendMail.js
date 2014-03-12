@@ -11,6 +11,12 @@ function sendResponse() {
 	);
 }
 
+var size = {
+	SMALL: 0.1,
+	MEDIUM: 0.2,
+	LARGE: 0.3
+};
+
 function setScale(scaleFactor) {
 	var scaleSource = $('body').width();
 	var fontSize = scaleSource * scaleFactor;
