@@ -14,15 +14,12 @@
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery.event.move.js"></script>
 		<script type="text/javascript" src="js/jquery.event.swipe.js"></script>
-		<script type="text/javascript" src="js/page2.js"></script>
+		<script type="text/javascript" src="js/devotionalpages.js"></script>
 		
-        <title>Page 2</title>
+        <title>Devotionals</title>
     </head>
 	
     <body>
-        <h1>This is Page 2</h1>
-		<a id="sendLink" onclick="sendResponse()" href="#">Send Response</a>
-		
 		<div id="menubutton">menu</div>
 		<div id="menu">
 		    <p>Choose Font Size: 
@@ -35,12 +32,11 @@
 		
 		<!-- Testing position -->
 		<script>
-		    $( "#menubutton" ).click(function() {
-			$( "#menu" ).toggle();
+		    $("#menubutton").click(function() {
+				$("#menu").toggle();
 		    });
 		</script>
 		
 		<div id="content" data-html=""></div>
-
     </body>
 </html>
