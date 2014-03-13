@@ -34,7 +34,9 @@ body {
     width:100%;
 }
 
-div.button {
+button {
+    display: block;
+    
     border: 1px solid black;
     border-radius: 5px;
     
@@ -46,11 +48,9 @@ div.button {
     height: 70px;
     
     margin: 50px auto;
-    
-    vertical-align: middle;
 }
 
-div.button>p {
+button>p {
     margin: auto;
     text-align: center;
     font-size: 2em;
