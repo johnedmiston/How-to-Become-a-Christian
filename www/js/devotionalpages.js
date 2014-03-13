@@ -11,7 +11,7 @@ var size = {
 	LARGE: 0.25
 };
 
-// Document initialization wars
+// Document initialization
 // ****************************************************************************
 $(document).ready(function() {
 	// Loading the user's current page at the beginning and setting the text size
@@ -21,6 +21,7 @@ $(document).ready(function() {
 	}
 	changePage();
 	setScale(size.MEDIUM);
+	updateStatus();
 	
 	// Binding the event to update the status bar to when the height changes
 	$(window).on("scroll", updateStatus);
@@ -32,6 +33,9 @@ $(document).ready(function() {
 			currentPage = 12;
 		}
 		else {
+			if (currentPage > permenantStorage.getItem("page")) {
+				permenantStorage.setItem("page", currentPage);
+			}
 			changePage();
 			updateStatus(e);
 		}
@@ -94,6 +98,10 @@ function updateStatus(e) {
 			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
 	var totalPercent = (currentPage - 1 + percent) / 12 * 100;
 	$("#status").css("width", totalPercent + "%");
+	
+	if (totalPercent == 1) {
+		permenantStorage.setItem("completed", true);
+	}
 }
 
 // This function reloads the content in the page from the new file we want
