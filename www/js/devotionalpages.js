@@ -89,7 +89,7 @@ function updateStatus(e) {
 	percent = $(document).height() - $(window).height() > 0 ?
 			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
 	var totalPercent = (currentPage - 1 + percent) / 12 * 100;
-	$("#status").css("width", totalPercent + "%");
+	$("#progressbar").css("width", totalPercent + "%");
 }
 
 // This function reloads the content in the page from the new file we want
