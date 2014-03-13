@@ -1,20 +1,18 @@
 /* Authors: Mark Smullen and Terry Penner
  * Date Created: March 11, 2014
- * Purpose: Supports the index.html page
+ * Purpose: Supports the devotionalselection.html page
  */
 
 body {
-    background-color:#333333;
+	background-color:#333333;
 	
-    height:100%;
-	width:100%;
-	
-    margin:0px;
-    padding:0px;
+	margin: 0;
+	padding: 0;
 }
 
 button {
     display: block;
+	float: left;
     
     border: 1px solid black;
     border-radius: 5px;
@@ -23,10 +21,11 @@ button {
     
     background-color: #E6E6E6;
     
-    width: 70%;
-    height: 70px;
+    width: 30%;
+    height: 0;
     
-    margin: 50px auto;
+    margin: 1.4%;
+	padding-bottom: 30%;
 }
 
 button>p {
