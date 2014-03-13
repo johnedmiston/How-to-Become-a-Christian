@@ -65,7 +65,7 @@ body {
 }
 
 .divider {
-    z-index: ;
+    z-index: 1;
     
     float: left;
     
