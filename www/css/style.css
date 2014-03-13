@@ -27,7 +27,7 @@
 }
 
 #footer {
-    background: white;
+    background-color: white;
     
     border-top: solid black 1px;
     border-radius: 5px 5px 0 0;
@@ -37,4 +37,11 @@
     
     margin: 0 auto 0;
     width: 100%;
+}
+
+#status {
+	background-color: green;
+	
+	width: 0%;
+	height: 20px;
 }

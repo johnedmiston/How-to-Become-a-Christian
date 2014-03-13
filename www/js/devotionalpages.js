@@ -4,22 +4,28 @@ var permenantStorage = window.localStorage;
 var currentPage; // Current page the user is viewing
 var percent; // How far from the top the user has scrolled
 
+// Font sizes
 var size = {
-	SMALL: 0.1,
+	SMALL: 0.15,
 	MEDIUM: 0.2,
-	LARGE: 0.3
+	LARGE: 0.25
 };
 
 // Document initialization wars
 // ****************************************************************************
 $(document).ready(function() {
+	// Loading the user's current page at the beginning and setting the text size
 	currentPage = permenantStorage.getItem("page");
 	if (currentPage == null) {
 		currentPage = 1;
 	}
 	changePage();
+	setScale(size.MEDIUM);
 	
+	// Binding the event to update the status bar to when the height changes
 	$(window).on("scroll", updateStatus);
+	
+	// Changing content pages and updating progress when the user swipes side to side
 	$("#content").on("swipeleft", function(e) {
 		currentPage++;
 		if (currentPage > 12) {
@@ -27,6 +33,7 @@ $(document).ready(function() {
 		}
 		else {
 			changePage();
+			updateStatus(e);
 		}
 	});
 	$("#content").on("swiperight", function(e) {
@@ -36,8 +43,11 @@ $(document).ready(function() {
 		}
 		else {
 			changePage();
+			updateStatus(e);
 		}
 	});
+	
+	// Making sure that scrolling up and down is still enabled
 	$("#content").on('movestart', function(e) {
 		if ((e.distX > e.distY && e.distX < -e.distY) ||
 		(e.distX < e.distY && e.distX > -e.distY)) {
@@ -48,6 +58,8 @@ $(document).ready(function() {
 
 // Support functions
 // ****************************************************************************
+
+// This function sends the email with the form's values
 function sendResponse() {
 	window.plugin.email.isServiceAvailable(
 		function (isAvailable) {
@@ -61,6 +73,7 @@ function sendResponse() {
 	);
 }
 
+// This function scales the text when the user chooses a new size
 function setScale(scaleFactor) {
 	var scaleSource = $('body').width();
 	var fontSize = scaleSource * scaleFactor;
@@ -71,16 +84,19 @@ function setScale(scaleFactor) {
 		percent = 0;
 	}
 	
-	$(document).scrollTop(percent);
+	var pageLoc = percent * ($(document).height() - $(window).height());
+	$('html, body').animate({scrollTop: pageLoc}, 1);
 }
 
+// This function updates the progress bar based on the user's current place in the page
 function updateStatus(e) {
-	var a = document.getElementById("status");
 	percent = $(document).height() - $(window).height() > 0 ?
 			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
-	a.innerHTML = "<p>" + percent + "</p>";
+	var totalPercent = (currentPage - 1 + percent) / 12 * 100;
+	$("#status").css("width", totalPercent + "%");
 }
 
+// This function reloads the content in the page from the new file we want
 function changePage() {
 	$("#content").toggle().attr("data-html", currentPage + "%20ChristianStarterKit");
 	loadDoc();
