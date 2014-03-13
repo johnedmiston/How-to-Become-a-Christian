@@ -5,9 +5,9 @@ var currentPage; // Current page the user is viewing
 var percent; // How far from the top the user has scrolled
 
 var size = {
-	SMALL: 0.1,
-	MEDIUM: 0.2,
-	LARGE: 0.3
+	SMALL: "7pt",
+	MEDIUM: "12pt",
+	LARGE: "16pt"
 };
 
 // Document initialization wars
@@ -61,11 +61,11 @@ function sendResponse() {
 	);
 }
 
-function setScale(scaleFactor) {
-	var scaleSource = $('body').width();
-	var fontSize = scaleSource * scaleFactor;
+function setScale(fontSize) {
+	//var scaleSource = $('body').width();
+	//var fontSize = scaleSource * scaleFactor;
 
-	$('body').css('font-size', fontSize + '%');
+	$('#content').css('font-size', fontSize);
 	
 	if (percent == null) {
 		percent = 0;
