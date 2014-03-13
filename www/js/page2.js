@@ -71,7 +71,7 @@ function setScale(scaleFactor) {
 		percent = 0;
 	}
 	
-	$(document).scrollTop(percent);
+	$(document).scrollTop(percent * ($(document).height() - $(window).height()));
 }
 
 function updateStatus(e) {
