@@ -9,14 +9,6 @@ $(document).ready(function() {
 		currentPage = 2;
 	}
 	setScale(permenantStorage.getItem("font"));
-	
-	// Making sure that scrolling up and down is still enabled
-	$("#content").on('movestart', function(e) {
-		if ((e.distX > e.distY && e.distX < -e.distY) ||
-		(e.distX < e.distY && e.distX > -e.distY)) {
-			e.preventDefault();
-		}
-	});
 });
 
 // Support functions
