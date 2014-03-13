@@ -1,3 +1,7 @@
+// Authors: Mark Smullen and Terry Penner
+// Date Created: March 13, 2014
+// Purpose: Supports the devotionalselection.html page
+
 // Global Variables
 // ****************************************************************************
 var permenantStorage = window.localStorage;

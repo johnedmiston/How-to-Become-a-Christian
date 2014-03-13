@@ -1,3 +1,7 @@
+// Authors: Mark Smullen and Terry Penner
+// Date Created: March 12, 2014
+// Purpose: Supports the devotionalpages.html page
+
 // Global Variables
 // ****************************************************************************
 

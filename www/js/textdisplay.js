@@ -1,3 +1,7 @@
+// Authors: Mark Smullen and Terry Penner
+// Date Created: March 13, 2014
+// Purpose: Supports the h2bac.html and devotionalpages.html pages
+
 // Global Variables
 // ****************************************************************************
 var permenantStorage = window.localStorage;

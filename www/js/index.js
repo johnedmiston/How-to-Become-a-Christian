@@ -1,3 +1,7 @@
+// Authors: Mark Smullen and Terry Penner
+// Date Created: March 11, 2014
+// Purpose: Supports the index.html page
+
 // Global Variables
 // ****************************************************************************
 var permenantStorage = window.localStorage;
