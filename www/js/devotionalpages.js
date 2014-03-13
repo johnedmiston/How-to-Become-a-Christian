@@ -65,8 +65,10 @@ function updateStatus(e) {
 			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
 	var totalPercent = (currentPage - 2 + percent) / 11 * 100;
 	$("#status").css("width", totalPercent + "%");
+	$("#status").html("" + totalPercent);
 	
-	if (totalPercent == 1) {
+	if (totalPercent == 100) {
+		$("#status").html("words");
 		permenantStorage.setItem("completed", true);
 	}
 }
