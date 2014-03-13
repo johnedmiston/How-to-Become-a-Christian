@@ -8,8 +8,8 @@ var permenantStorage = window.localStorage;
 
 // Font sizes
 var size = {
-	SMALL: "7pt",
-	MEDIUM: "12pt",
+	SMALL: "12pt",
+	MEDIUM: "14pt",
 	LARGE: "16pt"
 };
 
