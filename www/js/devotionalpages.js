@@ -6,9 +6,9 @@ var percent; // How far from the top the user has scrolled
 
 // Font sizes
 var size = {
-	SMALL: 0.15,
-	MEDIUM: 0.2,
-	LARGE: 0.25
+	SMALL: "7pt",
+	MEDIUM: "12pt",
+	LARGE: "16pt"
 };
 
 // Document initialization
@@ -77,17 +77,13 @@ function sendResponse() {
 	);
 }
 
-// This function scales the text when the user chooses a new size
-function setScale(scaleFactor) {
-	var scaleSource = $('body').width();
-	var fontSize = scaleSource * scaleFactor;
-
-	$('body').css('font-size', fontSize + '%');
+function setScale(fontSize) {
+	$('#content').css('font-size', fontSize);
 	
 	if (percent == null) {
 		percent = 0;
 	}
-	
+
 	var pageLoc = percent * ($(document).height() - $(window).height());
 	$('html, body').animate({scrollTop: pageLoc}, 1);
 }
