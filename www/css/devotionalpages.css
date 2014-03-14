@@ -84,7 +84,6 @@ body {
     z-index: 0;
     display: block;
     height: 100%;
-    position: relative;
     border-radius: 5px;
     background-image: linear-gradient(-45deg,
         #136dff 25%,
@@ -101,10 +100,12 @@ body {
 }
 
 .divider {
+	/* what the colemac bro. what the colemac. with a k. */
+	display: inline;
 	position: relative;
+	z-index: 1;
     float: left;
     width: 0%;
     height: 100%;
     border-right: 1px solid black;
-	z-index: 1;
 }

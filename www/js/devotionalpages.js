@@ -51,7 +51,11 @@ $(document).ready(function() {
 		}
 	});
 	
-	$(".divider").css("width", 100/11 + "%");
+	// Setting the positions of the chapter markers on the progressbar
+	$(".divider").each(function(i, obj) {
+		$(obj).css("width", (100 / 11) + "%");
+		$(obj).css("left", -i + "px");
+	});
 });
 
 // Support functions
@@ -64,7 +68,6 @@ function updateProgress() {
 
 	var totalPercent = (currentPage - 2 + percent) / 11 * 100;
 	$("#progressbar").css("width", totalPercent + "%");
-	$("#menu").html("" + $("#progressbar").css("width") + "," + totalPercent);
 	
 	if (totalPercent == 100) {
 		permenantStorage.setItem("completed", true);
