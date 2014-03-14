@@ -1,0 +1,40 @@
+/*
+ * This document contains the stylesheeting for all body content in the applications.
+ *
+ * The following contains the breakdown of elements and styles used within the document:
+ *  - p elements are standard paragraphs
+ *  - scripture class defines color, (italics?)
+ *  - "paragraph" scriptures are independent (non-inline) scriptures
+ *  - scriptrefs are scripture references, right-aligned.
+ *  - indent class sets text to indented and italicised.
+ */
+
+body {color: black; background-color: whitesmoke;}
+
+b,h1,h2,h3 {
+    color: #dd2222;
+}
+
+p {
+    margin-top: 6px;
+}
+
+p.scripture {
+    font-size: 100%;
+}
+
+.scripture {
+    color: #080; /* #7f0 */
+    font-style: italic;
+}
+
+.scriptref {
+    color: #2305ed;
+    text-align: right;
+    margin-bottom: 6px;
+}
+
+.indent {
+    text-align: left;
+    margin-left: 2em;
+}
