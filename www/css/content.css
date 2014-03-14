@@ -9,7 +9,7 @@
  *  - indent class sets text to indented and italicised.
  */
 
-body {color: black; background-color: whitesmoke;}
+body {color: black; background-color: whitesmoke; font-size: 14pt;}
 
 b,h1,h2,h3 {
     color: #dd2222;
