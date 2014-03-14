@@ -16,11 +16,8 @@ b,h1,h2,h3 {
 }
 
 p {
+    padding: 0;
     margin: 6px 0 0;
-}
-
-p.scripture {
-    font-size: 100%;
 }
 
 .scripture {
@@ -36,5 +33,5 @@ p.scripture {
 
 .indent {
     text-align: left;
-    margin-left: 2em;
+    margin: 0 0 0 2em;
 }
