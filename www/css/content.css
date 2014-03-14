@@ -9,18 +9,15 @@
  *  - indent class sets text to indented and italicised.
  */
 
-body {color: black; background-color: whitesmoke;}
+body {color: black; background-color: whitesmoke; font-size: 14pt;}
 
 b,h1,h2,h3 {
     color: #dd2222;
 }
 
 p {
-    margin-top: 6px;
-}
-
-p.scripture {
-    font-size: 100%;
+    padding: 0;
+    margin: 6px 0 0;
 }
 
 .scripture {
@@ -31,10 +28,10 @@ p.scripture {
 .scriptref {
     color: #080;
     text-align: right;
-    margin-bottom: 6px;
+    margin: 0 0 6px;
 }
 
 .indent {
     text-align: left;
-    margin-left: 2em;
+    margin: 0 0 0 2em;
 }

@@ -1,0 +1,14 @@
+if [ "$1" = "" ]; then
+    echo "usage: $0 [file]"
+else
+    sed -i -e 's/<s>/<p class="scripture">/g' "$1"
+    sed -i -e 's/<\/s>/<\/p>/g' "$1"
+    sed -i -e 's/<s.ref>/<p class="scriptref">/g' "$1"
+    sed -i -e 's/<\/s.ref>/<\/p>/g' "$1"
+    sed -i -e 's/<s.inline>/<span class="scripture">/g' "$1"
+    sed -i -e 's/<\/s.inline>/<\/span>/g' "$1"
+    sed -i -e 's/<p.indent>/<p class="indent">/g' "$1"
+    sed -i -e 's/<\/p.indent>/<\/p>/g' "$1"
+    sed -i -e 's/<s.indent>/<p class="indent scripture">/g' "$1"
+    sed -i -e 's/<\/s.indent>/<\/p>/g' "$1"
+fi
