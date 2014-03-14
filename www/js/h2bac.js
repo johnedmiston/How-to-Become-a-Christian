@@ -35,3 +35,15 @@ function sendResponse() {
 // Dummy function for document load callback
 function updateProgress() {
 }
+
+function openResponse() {
+	// Open response form
+	$("#response").style.display = "inherit";
+}
+
+function closeResponse() {
+	// Close response form when anywhere else is clicked
+	$("#response").style.display = "none";
+}
+
+$("button").on("click", openResponse);
