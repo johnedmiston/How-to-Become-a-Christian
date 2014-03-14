@@ -27,7 +27,6 @@ function getLayout() {
 	var height = $(window).height();
 	var ratio = width / height;
 	var layout = (ratio < 1) ? 0 : 1;
-	alert("size: (" + width + ", " + height + ")\nratio: " + ratio + "\nlayout: " + layout);
 	
 	return layout;
 }
