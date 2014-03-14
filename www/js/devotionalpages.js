@@ -50,6 +50,8 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 	});
+	
+	$(".divider").css("width", 100/11 + "%");
 });
 
 // Support functions
@@ -62,7 +64,7 @@ function updateProgress() {
 
 	var totalPercent = (currentPage - 2 + percent) / 11 * 100;
 	$("#progressbar").css("width", totalPercent + "%");
-	$("#menu").html("" + $(document).height() + "," + $(window).height() + "," + currentPage);
+	$("#menu").html("" + $("#progressbar").css("width") + "," + totalPercent);
 	
 	if (totalPercent == 100) {
 		permenantStorage.setItem("completed", true);
