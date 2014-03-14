@@ -15,6 +15,11 @@ $(document).ready(function() {
 		currentPage = 2;
 	}
 	changePage();
+	$(".divider").each(function(i, obj) {
+		if (i == currentPage - 2) {
+			$(obj).css("background-color", "rgba(0,0,0,0.2)");
+		}
+	});
 	setScale(permenantStorage.getItem("font"));
 	
 	// Binding the event to update the progress bar to when the height changes
@@ -31,6 +36,12 @@ $(document).ready(function() {
 				permenantStorage.setItem("page", currentPage);
 			}
 			changePage();
+			$(".divider").css("background-color", "rgba(255,255,255,0)");
+			$(".divider").each(function(i, obj) {
+				if (i == currentPage - 2) {
+					$(obj).css("background-color", "rgba(0,0,0,0.2)");
+				}
+			});
 		}
 	});
 	$("body").on("swiperight", function(e) {
@@ -40,6 +51,12 @@ $(document).ready(function() {
 		}
 		else {
 			changePage();
+			$(".divider").css("background-color", "rgba(255,255,255,0)");
+			$(".divider").each(function(i, obj) {
+				if (i == currentPage - 2) {
+					$(obj).css("background-color", "rgba(0,0,0,0.2)");
+				}
+			});
 		}
 	});
 	
@@ -54,12 +71,17 @@ $(document).ready(function() {
 	// Setting the positions of the chapter markers on the progressbar
 	$(".divider").each(function(i, obj) {
 		$(obj).html("<p style='text-align:center'>" + (i + 1) + "</p>");
-		$(obj).on("click", function() {
+		$(obj).on("touchstart mousedown", function() {
+			$(this).css("background-color", "rgba(255,255,255,0.5)");
+		});
+		$(obj).on("touchend mouseup", function() {
 			currentPage = i + 2;
 			if (currentPage > permenantStorage.getItem("page")) {
 				permenantStorage.setItem("page", currentPage);
 			}
 			changePage();
+			$(".divider").css("background-color", "rgba(255,255,255,0)");
+			$(this).css("background-color", "rgba(0,0,0,0.2)");
 		});
 	});
 });
