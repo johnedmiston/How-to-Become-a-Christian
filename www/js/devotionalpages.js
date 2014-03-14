@@ -21,6 +21,7 @@ $(document).ready(function() {
 		}
 	});
 	setScale(permenantStorage.getItem("font"));
+	setupMenu();
 	
 	// Binding the event to update the progress bar to when the height changes
 	$(window).on("scroll", updateProgress);

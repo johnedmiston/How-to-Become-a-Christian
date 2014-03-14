@@ -24,19 +24,12 @@
     <body>
 		<div id="menubutton">menu</div>
 		<div id="menu">
-		    <p>Choose Font Size: 
+		    <p id="fontselector">Choose Font Size: 
 			<a id="font1" onclick="setScale(size.SMALL)">1</a>
 			<a id="font2" onclick="setScale(size.MEDIUM)">2</a>
 			<a id="font3" onclick="setScale(size.LARGE)">3</a>
 		    </p>
 		</div>
-		
-		<!-- Testing position -->
-		<script>
-		    $("#menubutton").click(function() {
-				$("#menu").toggle();
-		    });
-		</script>
 		
 		<div style="margin: 0 8px;"><div id="content" data-html="1%20ChristianStarterKit"></div>
 		<br />
