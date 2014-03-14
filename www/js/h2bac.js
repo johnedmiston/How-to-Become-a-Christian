@@ -17,6 +17,8 @@ $(document).ready(function() {
 		currentPage = 2;
 	}
 	setScale(permenantStorage.getItem("font"));
+	
+	$("#response").on("submit", sendForm);
 });
 
 // Support functions
@@ -39,6 +41,14 @@ function sendResponse() {
 
 // Dummy function for document load callback
 function updateProgress() {
+}
+
+// Method called when the form "submit" button is pressed
+function sendForm(e) {
+	e.preventDefault();
+	
+	alert($("#formRespond").find("[name='name']").val());
+	//redirect('devotionalpages.html');
 }
 
 function openResponse() {
