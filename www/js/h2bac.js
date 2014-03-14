@@ -2,6 +2,9 @@
 // Date Created: March 13, 2014
 // Purpose: Supports the h2bac.html page
 
+// Variables
+var responseFormOpen = 0;
+
 // Document initialization
 // ****************************************************************************
 $(document).ready(function() {
@@ -26,7 +29,8 @@ function sendResponse() {
 			window.plugin.email.open({
 				to:          ['terrencepenner@gmail.com'],
 				subject:     'H2BAC Response',
-				body:        '<h3>TEST</h3><h2>TEST</h2><h1>TEST</h1>',
+				body:        '<h3>Response</h3><br />' +
+					     '',
 				isHtml:      true
 			});
 		}
@@ -39,12 +43,28 @@ function updateProgress() {
 
 function openResponse() {
 	// Open response form
-	$("#response").style.display = "inherit";
+	if (responseFormOpen == 0) {
+		$("#response").css("display", "inline");
+		$("#response").css("left", ($(window).width() - $("#response").width()) / 2);
+		$("#response").css("top", ($(window).height() - $("#response").height()) / 2);
+	}
+	responseFormOpen = 1;
 }
 
 function closeResponse() {
 	// Close response form when anywhere else is clicked
-	$("#response").style.display = "none";
+	if (responseFormOpen == 1) {
+		$("#response").css("display", "none");
+	}
+	responseFormOpen = 0;
 }
 
-$("button").on("click", openResponse);
+function redirect(page) {
+    window.location = page;
+}
+
+$(document).click(function(e) {
+	if (!$(e.target).is($("button").add($("#response")).add($("#response").find("*")))) {
+		closeResponse();
+	}
+});

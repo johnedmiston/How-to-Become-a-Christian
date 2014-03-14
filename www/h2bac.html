@@ -32,19 +32,20 @@
 			</div>
 		</div>
 		
-		<div style="margin: 0 8px;"><div id="content" data-html="1%20ChristianStarterKit"></div>
-		<br />
-		<p>If you have prayed the prayer:</p>
-		<p>
-		    <div style="margin: auto; text-align: center;">
-			<button type="submit" name="response" value="firsttime"> I have decided to become a<br />Christian for the first time.</button>
-			<button type="submit" name="response" value="recommit"> I am recommitting my life to<br />Christ after being away from God.</button>
-			<button type="submit" name="response" value="doubts"> I still have some doubts or questions.</button>
-			<button type="submit" name="response" value="strong"> I am already a strong Christian.</button>
-			<button type="submit" name="response" value="notnow">No thanks, not right now.</button>
-		    </div>
-		</p>
-		<div id="response" data-html="responseForm"></div>
+		<div style="margin: 0 8px;">
+		    <div id="content" data-html="1%20ChristianStarterKit"></div>
+		    <br />
+		    <p>If you have prayed the prayer:</p>
+		    <p>
+			<div style="margin: auto; text-align: center;">
+			    <button type="submit" name="response" value="firsttime" onclick="openResponse()"> I have decided to become a<br />Christian for the first time.</button>
+			    <button type="submit" name="response" value="recommit" onclick="openResponse()"> I am recommitting my life to<br />Christ after being away from God.</button>
+			    <button type="submit" name="response" value="doubts" onclick="openResponse()"> I still have some doubts or questions.</button>
+			    <button type="submit" name="response" value="strong" onclick="openResponse()"> I am already a strong Christian.</button>
+			    <button type="submit" name="response" value="notnow" onclick="redirect('devotionalpages.html')">No thanks, not right now.</button>
+			</div>
+		    </p>
+		    <div id="response" data-html="responseForm" style="display: none;"></div>
 		</div>
     </body>
 </html>
