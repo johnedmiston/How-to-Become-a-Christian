@@ -21,7 +21,7 @@ $(document).ready(function() {
 	$(window).on("scroll", updateProgress);
 	
 	// Changing content pages and updating progress when the user swipes side to side
-	$("#content").on("swipeleft", function(e) {
+	$("body").on("swipeleft", function(e) {
 		currentPage++;
 		if (currentPage > 12) {
 			currentPage = 12;
@@ -33,7 +33,7 @@ $(document).ready(function() {
 			changePage();
 		}
 	});
-	$("#content").on("swiperight", function(e) {
+	$("body").on("swiperight", function(e) {
 		currentPage--;
 		if (currentPage < 2) {
 			currentPage = 2;
