@@ -1,0 +1,43 @@
+<!-- Authors: Mark Smullen and Terry Penner -->
+<!-- Date Created: March 13, 2014 -->
+<!-- Purpose: Container for the How to Become a Christian content. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+		
+		<!-- CSS Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/h2bac.css">
+		<link rel="stylesheet" type="text/css" href="css/content.css">
+		
+		<!-- JS Scripts -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/h2bac.js"></script>
+		<script type="text/javascript" src="js/textdisplay.js"></script>
+		
+        <title>How to Become a Christian</title>
+    </head>
+	
+    <body>
+		<div id="menubutton">menu</div>
+		<div id="menu">
+		    <p>Choose Font Size: 
+			<a id="font1" onclick="setScale(size.SMALL)">1</a>
+			<a id="font2" onclick="setScale(size.MEDIUM)">2</a>
+			<a id="font3" onclick="setScale(size.LARGE)">3</a>
+		    </p>
+		</div>
+		
+		<!-- Testing position -->
+		<script>
+		    $("#menubutton").click(function() {
+				$("#menu").toggle();
+		    });
+		</script>
+		
+		<div id="content" data-html="1%20ChristianStarterKit"></div>
+    </body>
+</html>

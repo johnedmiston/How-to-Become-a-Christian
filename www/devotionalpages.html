@@ -1,0 +1,64 @@
+<!-- Authors: Mark Smullen and Terry Penner -->
+<!-- Date Created: March 12, 2014 -->
+<!-- Purpose: Container for the devotionals in the H2BAC app. -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+		
+		<!-- CSS Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="css/devotionalpages.css">
+		<link rel="stylesheet" type="text/css" href="css/content.css">
+		
+		<!-- JS Scripts -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.event.move.js"></script>
+		<script type="text/javascript" src="js/jquery.event.swipe.js"></script>
+		<script type="text/javascript" src="js/devotionalpages.js"></script>
+		<script type="text/javascript" src="js/textdisplay.js"></script>
+		
+        <title>Devotionals</title>
+    </head>
+	
+    <body>
+		<!-- Menu functionality -->
+		<div id="menubutton">menu</div>
+		<div id="menu">
+		    <p>Choose Font Size: 
+			<a id="font1" onclick="setScale(size.SMALL)">1</a>
+			<a id="font2" onclick="setScale(size.MEDIUM)">2</a>
+			<a id="font3" onclick="setScale(size.LARGE)">3</a>
+		    </p>
+		</div>
+		<script>
+		    $("#menubutton").click(function() {
+				$("#menu").toggle();
+		    });
+		</script>
+		
+		<!-- Where the page content will be loaded into dynamically -->
+		<div id="content" data-html=""></div>
+		
+		<h2 id="swipeNotice"><-- Swipe left or right to change chapters --></h2>
+		
+		<!-- The bar that shows progress throughout all the documents -->
+		<div id="footer">
+		    <div id="overlay">
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<div class="divider"></div>
+				<span id="progressbar" style="width: 0%"></span>
+		    </div>
+		</div>
+    </body>
+</html>

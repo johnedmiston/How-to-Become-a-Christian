@@ -1,0 +1,114 @@
+/* Authors: Mark Smullen and Terry Penner
+ * Date Created: March 13, 2014
+ * Purpose: Supports the devotionalpages.html page
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#menubutton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    z-index: 1;
+    
+    width: 32px;
+    min-width: 5%;
+    height: 0;
+    
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    
+    background-color: black;
+    color: white;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    margin-top: 5%;
+    
+    display: none;
+    
+    width: 100px;
+    height: 200px;
+    
+    background-color: black;
+    color: white;
+}
+
+#content {
+    padding: 0;
+    margin: 0 8px;
+}
+
+#swipeNotice {
+	text-align: center;
+	margin-bottom: 72px;
+}
+
+#footer {
+    background-color: #666666;
+    
+    border-top: 2px solid black;
+    
+    position:fixed;
+    bottom:0;
+    
+    padding: 0;
+    margin: 0;
+    
+    width: 100%;
+    height: 60px;
+    
+    box-shadow: 0 -5px 5px #b3b3b3;
+}
+
+#overlay {
+    width: 95%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    overflow: hidden;
+    
+    background-color: #e6e6e6;
+    box-shadow: inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+    
+    margin: 9px auto;
+    padding: 0;
+}
+
+#progressbar {
+	position: relative;
+    z-index: 0;
+    display: block;
+    height: 100%;
+    background-image: linear-gradient(-45deg,
+        #136dff 25%,
+        #2174ff 25%,
+        #2174ff 50%,
+        #136dff 50%,
+        #136dff 75%,
+        #2174ff 75%,
+        #2174ff
+    );
+    background-size: 50px 50px;
+    box-shadow: inset 0 2px 9px  rgba(255,255,255,0.3),
+        inset 0 -2px 6px rgba(0,0,0,0.4);
+}
+
+.divider {
+    display: inline;
+    position: relative;
+    z-index: 1;
+    float: left;
+    width: 0%;
+    height: 100%;
+    border-right: 1px solid black;
+}

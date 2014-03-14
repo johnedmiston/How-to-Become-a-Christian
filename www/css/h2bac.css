@@ -1,0 +1,48 @@
+/* Authors: Mark Smullen and Terry Penner
+ * Date Created: March 13, 2014
+ * Purpose: Supports the h2bac.html page
+ */
+
+ body {
+    margin: 0;
+    padding: 0;
+}
+
+#menubutton {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    z-index: 1;
+    
+    width: 32px;
+    min-width: 5%;
+    height: 0;
+    
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    
+    background-color: black;
+    color: white;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    
+    margin-top: 5%;
+    
+    display: none;
+    
+    width: 100px;
+    height: 200px;
+    
+    background-color: black;
+    color: white;
+}
+
+#content {
+    padding: 0;
+    margin: 0 8px;
+}
