@@ -25,9 +25,9 @@ button {
     background-color: #E6E6E6;
     
     width: 70%;
-    height: 70px;
+    height: 50px;
     
-    margin: 50px auto;
+    margin: 2.5% auto;
 }
 
 button>p {
