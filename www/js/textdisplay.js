@@ -5,6 +5,7 @@
 // Global Variables
 // ****************************************************************************
 var permenantStorage = window.localStorage;
+var percent = 0;
 
 // Font sizes
 var size = {
@@ -35,6 +36,7 @@ function loadDoc() {
 	$("[data-html]").each(function() {
 		element = $(this);
 		var src = "content/" + $(this).attr("data-html") + ".html";
-		element.load(src);
+		
+		element.load(src, updateProgress);
 	});
 }

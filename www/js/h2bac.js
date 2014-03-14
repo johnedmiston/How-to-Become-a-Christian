@@ -31,3 +31,7 @@ function sendResponse() {
 		}
 	);
 }
+
+// Dummy function for document load callback
+function updateProgress() {
+}

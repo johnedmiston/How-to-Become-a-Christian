@@ -4,12 +4,7 @@
 
 // Global Variables
 // ****************************************************************************
-
-// Current page the user is viewing
 var currentPage;
-
-// How far from the top the user has scrolled
-var percent;
 
 // Document initialization
 // ****************************************************************************
@@ -21,10 +16,9 @@ $(document).ready(function() {
 	}
 	changePage();
 	setScale(permenantStorage.getItem("font"));
-	updateStatus();
 	
-	// Binding the event to update the status bar to when the height changes
-	$(window).on("scroll", updateStatus);
+	// Binding the event to update the progress bar to when the height changes
+	$(window).on("scroll", updateProgress);
 	
 	// Changing content pages and updating progress when the user swipes side to side
 	$("#content").on("swipeleft", function(e) {
@@ -37,7 +31,6 @@ $(document).ready(function() {
 				permenantStorage.setItem("page", currentPage);
 			}
 			changePage();
-			updateStatus(e);
 		}
 	});
 	$("#content").on("swiperight", function(e) {
@@ -47,7 +40,6 @@ $(document).ready(function() {
 		}
 		else {
 			changePage();
-			updateStatus(e);
 		}
 	});
 	
@@ -64,12 +56,13 @@ $(document).ready(function() {
 // ****************************************************************************
 
 // This function updates the progress bar based on the user's current place in the page
-function updateStatus(e) {
+function updateProgress() {
 	percent = $(document).height() - $(window).height() > 0 ?
-			($(document).scrollTop() / ($(document).height() - $(window).height())) : 1;
+			($(document).scrollTop() / ($(document).height() - $(window).height())) : 0;
 
 	var totalPercent = (currentPage - 2 + percent) / 11 * 100;
 	$("#progressbar").css("width", totalPercent + "%");
+	$("#menu").html("" + $(document).height() + "," + $(window).height() + "," + currentPage);
 	
 	if (totalPercent == 100) {
 		permenantStorage.setItem("completed", true);
