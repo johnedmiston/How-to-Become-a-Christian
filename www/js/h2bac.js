@@ -9,6 +9,7 @@ var responseFormOpen = 0;
 // ****************************************************************************
 $(document).ready(function() {
 	loadDoc();
+	setupMenu();
 	
 	// Loading the user's current page at the beginning and setting the text size
 	currentPage = permenantStorage.getItem("page");

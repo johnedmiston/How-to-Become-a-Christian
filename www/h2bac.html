@@ -11,6 +11,7 @@
 		<!-- CSS Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/h2bac.css">
 		<link rel="stylesheet" type="text/css" href="css/content.css">
+		<link rel="stylesheet" type="text/css" href="css/menu.css">
 		
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
@@ -22,21 +23,14 @@
     </head>
 	
     <body>
-		<div id="menubutton">menu</div>
 		<div id="menu">
-		    <p>Choose Font Size: 
-			<a id="font1" onclick="setScale(size.SMALL)">1</a>
-			<a id="font2" onclick="setScale(size.MEDIUM)">2</a>
-			<a id="font3" onclick="setScale(size.LARGE)">3</a>
-		    </p>
+			<div id="menubutton"></div>
+			<div id="menudropdown">
+				<div id="font3" onclick="setScale(size.LARGE)"></div>
+				<div id="font2" onclick="setScale(size.MEDIUM)"></div>
+				<div id="font1" onclick="setScale(size.SMALL)"></div>
+			</div>
 		</div>
-		
-		<!-- Testing position -->
-		<script>
-		    $("#menubutton").click(function() {
-				$("#menu").toggle();
-		    });
-		</script>
 		
 		<div style="margin: 0 8px;">
 		    <div id="content" data-html="1%20ChristianStarterKit"></div>

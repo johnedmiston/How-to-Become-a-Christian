@@ -1,0 +1,116 @@
+/* Authors: Mark Smullen and Terry Penner
+ * Date Created: March 14, 2014
+ * Purpose: Supports the h2bac.html and devotionalpages.html pages
+ */
+
+#menu {
+	position: fixed;
+    top: -1px;
+    right: -1px;
+	z-index: 1;
+	
+	margin: 0;
+	padding: 0;
+	
+	width: 80px;
+	height: 80px;
+	border-bottom-left-radius: 15px;
+	overflow: hidden;
+	
+	background-color: whitesmoke;
+	border: 1px solid black;
+}
+
+#menubutton {
+	position: fixed;
+    top: 6px;
+    right: 3px;
+	z-index: 2;
+	
+    width: 32px;
+    min-width: 5%;
+    height: 0;
+    
+    padding-bottom: 5%;
+	
+	background-image: url("../img/settings.png");
+	background-repeat: no-repeat;
+}
+
+#menudropdown {
+    position: fixed;
+    top: 58px;
+    right: -1px;
+	
+	border: 1px solid black;
+	border-bottom-left-radius: 15px;
+	border-top: 0;
+	
+	width: 80px;
+	height: 42px;
+    
+	margin-bottom: 0;
+	padding-top: 15px;
+    
+    display: none;
+	background-color: whitesmoke;
+}
+
+#font1 {
+	width: 24px;
+	height: 24px;
+	float: right;
+	background-image: url("../img/16pt.png");
+	background-repeat: no-repeat;
+	margin-bottom: 0;
+}
+
+#font2 {
+	width: 24px;
+	height: 24px;
+	float: right;
+	background-image: url("../img/19pt.png");
+	background-repeat: no-repeat;
+}
+
+#font3 {
+	width: 24px;
+	height: 24px;
+	float: right;
+	background-image: url("../img/22pt.png");
+	background-repeat: no-repeat;
+}
+
+#content {
+    padding: 0;
+    margin: 0 8px;
+}
+
+#response {
+   position: fixed;
+   margin: auto;
+   border: 1px solid black;
+   border-radius: 20px;
+   text-align: center;
+   /*display: none;*/
+}
+
+button {
+    display: inline-block;
+    
+    border: 0px solid black;
+    border-radius: 5px;
+    
+    box-shadow: inset 0 2px 9px  rgba(255,255,255,0.4),
+        inset 0 -2px 4px rgba(0,0,0,0.5);
+    
+    background-color: #E6E6E6;
+    
+    margin: 5px 8px;
+}
+
+button>p {
+    margin: auto;
+    text-align: center;
+    font-size: 1.5em;
+}

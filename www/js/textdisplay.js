@@ -29,6 +29,19 @@ function setScale(fontSize) {
 	$('html, body').animate({scrollTop: pageLoc}, 1);
 }
 
+// This function sets the click events for showing and hiding the settings menu
+function setupMenu() {
+	$("#menubutton").click(function() {
+		$("#menudropdown").toggle();
+	});
+	$(document).click(function(e) {
+		if ($(e.target).is($("#menudropdown").find("*").add($("#menubutton")))) {
+			return false;
+		}
+		$("#menudropdown").hide();
+	});
+}
+
 // From https://gist.github.com/tsi/5137145
 // By tsi
 function loadDoc() { 
