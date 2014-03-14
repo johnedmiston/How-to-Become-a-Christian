@@ -16,7 +16,7 @@ b,h1,h2,h3 {
 }
 
 p {
-    margin-top: 6px;
+    margin: 6px 0 0;
 }
 
 p.scripture {
@@ -31,7 +31,7 @@ p.scripture {
 .scriptref {
     color: #080;
     text-align: right;
-    margin-bottom: 6px;
+    margin: 0 0 6px;
 }
 
 .indent {
