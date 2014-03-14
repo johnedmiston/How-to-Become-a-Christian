@@ -32,13 +32,13 @@ function setScale(fontSize) {
 // This function sets the click events for showing and hiding the settings menu
 function setupMenu() {
 	$("#menubutton").click(function() {
-		$("#menu").toggle();
+		$("#menudropdown").toggle();
 	});
 	$(document).click(function(e) {
-		if ($(e.target).is($("#menu").find("*").add($("#menu")).add($("#menubutton")))) {
+		if ($(e.target).is($("#menudropdown").find("*").add($("#menubutton")))) {
 			return false;
 		}
-		$("#menu").hide();
+		$("#menudropdown").hide();
 	});
 }
 

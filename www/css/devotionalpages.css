@@ -8,40 +8,6 @@ body {
     padding: 0;
 }
 
-#menubutton {
-    position: fixed;
-    top: 0;
-    right: 0;
-    
-    z-index: 1;
-    
-    width: 32px;
-    min-width: 5%;
-    height: 0;
-    
-    padding-bottom: 5%;
-    margin-bottom: 5%;
-    
-    background-color: black;
-    color: white;
-}
-
-#menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    
-    margin-top: 5%;
-    
-    display: none;
-    
-    width: 100px;
-    height: 200px;
-    
-    background-color: black;
-    color: white;
-}
-
 #swipeNotice {
 	text-align: center;
 	margin-bottom: 72px;
