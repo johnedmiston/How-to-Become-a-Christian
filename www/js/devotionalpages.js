@@ -53,8 +53,14 @@ $(document).ready(function() {
 	
 	// Setting the positions of the chapter markers on the progressbar
 	$(".divider").each(function(i, obj) {
-		$(obj).css("width", (100 / 11) + "%");
-		$(obj).css("left", -i + "px");
+		$(obj).html("<p style='text-align:center'>" + (i + 1) + "</p>");
+		$(obj).on("click", function() {
+			currentPage = i + 2;
+			if (currentPage > permenantStorage.getItem("page")) {
+				permenantStorage.setItem("page", currentPage);
+			}
+			changePage();
+		});
 	});
 });
 
