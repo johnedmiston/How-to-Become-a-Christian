@@ -25,14 +25,16 @@ $(document).ready(function() {
 // ****************************************************************************
 
 // This function sends the email with the form's values
-function sendResponse() {
+function sendResponse(name, country, comments) {
 	window.plugin.email.isServiceAvailable(
 		function (isAvailable) {
 			window.plugin.email.open({
 				to:          ['terrencepenner@gmail.com'],
 				subject:     'H2BAC Response',
 				body:        '<h3>Response</h3><br />' +
-					     '',
+					     '<p>Name: ' + name + '</p>' +
+						 '<p>Country: ' + country + '</p>' +
+						 '<p>Comments: ' + comments + '</p>',
 				isHtml:      true
 			});
 		}
@@ -47,8 +49,17 @@ function updateProgress() {
 function sendForm(e) {
 	e.preventDefault();
 	
-	alert($("#formRespond").find("[name='name']").val());
-	//redirect('devotionalpages.html');
+	var name = $("#formRespond").find("[name='name']").val();
+	var country = $("#formRespond").find("[name='country']").val();
+	var comments = $("#formRespond").find("[name='comments']").val();
+	
+	if (name != "") {
+		sendResponse(name, country, comments);
+		redirect('devotionalpages.html');
+	}
+	else {
+		alert("Please enter your name.");
+	}
 }
 
 function openResponse() {
