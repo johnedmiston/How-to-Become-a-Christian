@@ -54,19 +54,21 @@ function sendForm(e) {
 function openResponse() {
 	// Open response form
 	if (responseFormOpen == 0) {
-		$("#response").css("display", "inline");
-		$("#response").css("left", ($(window).width() - $("#response").width()) / 2);
-		$("#response").css("top", ($(window).height() - $("#response").height()) / 2);
+		//$("#darkbox").show();
+		$("#darkbox").fadeIn();
+		$("#response").css("margin-top", ($(this).height() - $("#response").height()) / 2);
+		$("#response").css("margin-bottom", ($(this).height() - $("#response").height()) / 2);
+		responseFormOpen = 1;
 	}
-	responseFormOpen = 1;
 }
 
 function closeResponse() {
 	// Close response form when anywhere else is clicked
 	if (responseFormOpen == 1) {
-		$("#response").css("display", "none");
+		$("#darkbox").fadeOut();
+		//$("#darkbox").hide();
+		responseFormOpen = 0;
 	}
-	responseFormOpen = 0;
 }
 
 function redirect(page) {
@@ -74,7 +76,12 @@ function redirect(page) {
 }
 
 $(document).click(function(e) {
-	if (!$(e.target).is($("button").add($("#response")).add($("#response").find("*")))) {
+	if ($(e.target).is($("#darkbox"))) {
 		closeResponse();
 	}
 });
+
+$(window).resize(function() {
+	$("#response").css("margin-top", ($(this).height() - $("#response").height()) / 2);
+	$("#response").css("margin-bottom", ($(this).height() - $("#response").height()) / 2);
+})

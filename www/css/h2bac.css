@@ -14,21 +14,33 @@ body {
 }
 
 #response {
+   width: 5in;
+   max-width: 60%;
+   max-height: 70%;
+   
+   text-align: center;
+   
+   border: 1px solid black;
+   border-radius: 20px;
+   background-color: whitesmoke;
+   
+   padding: 10px;
+   margin: auto;
+   
+   overflow: scroll;
+}
+
+#darkbox {
    position: fixed;
    left: 0;
    top: 0;
    
-   width: 5in;
-   max-width: 60%;
+   display: none;
    
-   background-color: whitesmoke;
-   border: 1px solid black;
-   border-radius: 20px;
+   width: 100%;
+   height: 100%;
    
-   text-align: center;
-   
-   padding: 10px;
-   margin: 0;
+   background-color: rgba(0, 0, 0, 0.825);
 }
 
 button {
