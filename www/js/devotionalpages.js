@@ -106,6 +106,7 @@ function updateProgress() {
 // This function reloads the content in the page from the new file we want
 function changePage() {
 	$("#content").toggle().attr("data-html", currentPage + "%20ChristianStarterKit");
+	$("#title").find("h2").text("Chapter " + (currentPage - 1));
 	loadDoc();
 	$("#content").toggle();
 	$(document).scrollTop(0);

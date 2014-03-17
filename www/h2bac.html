@@ -10,8 +10,8 @@
 		
 		<!-- CSS Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/h2bac.css">
-		<link rel="stylesheet" type="text/css" href="css/content.css">
 		<link rel="stylesheet" type="text/css" href="css/menu.css">
+		<link rel="stylesheet" type="text/css" href="css/content.css">
 		
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
@@ -23,13 +23,25 @@
     </head>
 	
     <body>
-		<div id="menu">
+		<!-- <div id="menu">
 			<div id="menubutton"></div>
 			<div id="menudropdown">
 				<div id="font3" onclick="setScale(size.LARGE)"></div>
 				<div id="font2" onclick="setScale(size.MEDIUM)"></div>
 				<div id="font1" onclick="setScale(size.SMALL)"></div>
 			</div>
+		</div> -->
+		
+		<div id="topmenu">
+		    <div id="backbutton" onclick="window.history.back()"></div> <!-- Left-aligned button -->
+		    <div id="menubutton"></div> <!-- Right-aligned button -->
+		    <span id="about">i</span> <!-- Right-aligned text-->
+		    <span id="title"><h2 style="color: white;">How to Become a Christian</h2></span> <!-- Centered text -->
+		    <div id="menudropdown">
+			<div id="font3" onclick="setScale(size.LARGE)"></div>
+			<div id="font2" onclick="setScale(size.MEDIUM)"></div>
+			<div id="font1" onclick="setScale(size.SMALL)"></div>
+		    </div>
 		</div>
 		
 		<div style="margin: 0 8px;">
