@@ -3,7 +3,11 @@
  * Purpose: Supports the h2bac.html page
  */
 
+
 body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
     margin: 0;
     padding: 0;
 }

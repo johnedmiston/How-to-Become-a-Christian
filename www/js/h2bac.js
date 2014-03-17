@@ -25,16 +25,17 @@ $(document).ready(function() {
 // ****************************************************************************
 
 // This function sends the email with the form's values
-function sendResponse(name, country, comments) {
+function sendResponse(type, name, country, comments) {
 	window.plugin.email.isServiceAvailable(
 		function (isAvailable) {
 			window.plugin.email.open({
 				to:          ['terrencepenner@gmail.com'],
 				subject:     'H2BAC Response',
 				body:        '<h3>Response</h3><br />' +
-					     '<p>Name: ' + name + '</p>' +
-						 '<p>Country: ' + country + '</p>' +
-						 '<p>Comments: ' + comments + '</p>',
+						'<p>Type: ' + type + '</p>' +
+						'<p>Name: ' + name + '</p>' +
+						'<p>Country: ' + country + '</p>' +
+						'<p>Comments: ' + comments + '</p>',
 				isHtml:      true
 			});
 		}
@@ -49,12 +50,14 @@ function updateProgress() {
 function sendForm(e) {
 	e.preventDefault();
 	
+	var type = $("#formRespond").attr("name");
 	var name = $("#formRespond").find("[name='name']").val();
 	var country = $("#formRespond").find("[name='country']").val();
 	var comments = $("#formRespond").find("[name='comments']").val();
 	
 	if (name != "") {
-		sendResponse(name, country, comments);
+		sendResponse(type, name, country, comments);
+		permenantStorage.setItem("page", 2);
 		redirect('devotionalpages.html');
 	}
 	else {
@@ -62,10 +65,10 @@ function sendForm(e) {
 	}
 }
 
-function openResponse() {
-	// Open response form
+// Open response form
+function openResponse(buttonType) {
 	if (responseFormOpen == 0) {
-		//$("#darkbox").show();
+		$("#formRespond").attr("name", buttonType);
 		$("#darkbox").fadeIn();
 		$("#response").css("margin-top", ($(this).height() - $("#response").height()) / 2);
 		$("#response").css("margin-bottom", ($(this).height() - $("#response").height()) / 2);
@@ -73,25 +76,27 @@ function openResponse() {
 	}
 }
 
+// Close response form when anywhere else is clicked
 function closeResponse() {
-	// Close response form when anywhere else is clicked
 	if (responseFormOpen == 1) {
 		$("#darkbox").fadeOut();
-		//$("#darkbox").hide();
 		responseFormOpen = 0;
 	}
 }
 
+// This function takes a url and changes the current page to be it
 function redirect(page) {
     window.location = page;
 }
 
+// Close response form when the darkbox is clicked
 $(document).click(function(e) {
 	if ($(e.target).is($("#darkbox"))) {
 		closeResponse();
 	}
 });
 
+// Change the size of the popup as needed
 $(window).resize(function() {
 	$("#response").css("margin-top", ($(this).height() - $("#response").height()) / 2);
 	$("#response").css("margin-bottom", ($(this).height() - $("#response").height()) / 2);

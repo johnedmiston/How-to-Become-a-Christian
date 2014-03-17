@@ -3,7 +3,11 @@
  * Purpose: Supports the devotionalselection.html page
  */
 
+
 body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 	background-color:#333333;
 	
 	margin: 0;
