@@ -10,8 +10,19 @@ var permenantStorage = window.localStorage;
 // ****************************************************************************
 
 window.onload = function() {
-	getLayout();
+	layoutButtons(getLayout());
 };
+
+$(window).resize(function() {
+	layoutButtons(getLayout());
+	//alert($(window).outerHeight(), $(window).outerWidth());
+	if ($(window).height / 16 < 22) {
+		alert("Oh noes!");
+		$("body").css("font-size", (22 / ($(window).height / (16 * 16)) + "%"));
+	} else {
+		$("body").css("font-size", "100%");
+	}
+})
 
 // This function takes a url and changes the current page to be it
 function gotoDevotional(page) {
@@ -33,11 +44,40 @@ function getLayout() {
 
 // Set the button layout of the page
 function layoutButtons(layout) {
+	$(".docbutton").css("clear", "none");
 	if (layout == 0) {
 		// Portrait
-		
+		if ($(window).width / 3 < $(window).height / 4) {
+			// When the screen's buttons overflow widthwise
+			$("button").css("width", "30%");
+			$("button").css("height", $("button").width() + "px");
+		} else {
+			$("button").css("height", $(window).height()/100*22 + "px");
+			$("button").css("width", $("button").height() + "px");
+		}
+		$(".docbutton").css("margin-left", ((($(window).width() - ( $("button").outerWidth() * 3 ) ) / 4 ) - 1));
+		$(".docbutton").css("margin-top", ((($(window).height() - ( $("button").outerHeight() * 4 ) ) / 5 ) - 1));
+		$("button").each(function(i) {
+			if (i % 3 == 0) {
+				$(this).css("clear", "left");
+			}
+		});
 	} else {
 		// Landscape
-		
+		if (($(window).height() / 3) < ($(window).width() / 4)) {
+			// When the screen's buttons overflow heightwise
+			$("button").css("height", $(window).height()/10*3 + "px");
+			$("button").css("width", $("button").height() + "px");
+		} else {
+			$("button").css("width", "22%");
+			$("button").css("height", $("button").width() + "px");
+		}
+		$(".docbutton").css("margin-left", ((($(window).width() - ( $("button").outerWidth() * 4 ) ) / 5 ) - 1));
+		$(".docbutton").css("margin-top", ((($(window).height() - ( $("button").outerHeight() * 3 ) ) / 4 ) - 1));
+		$("button").each(function(i) {
+			if (i % 4 == 0) {
+				$(this).css("clear", "left");
+			}
+		});
 	}
 }
