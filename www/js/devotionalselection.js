@@ -17,7 +17,7 @@ $(window).resize(function() {
 	layoutButtons(getLayout());
 	//alert($(window).outerHeight(), $(window).outerWidth());
 	if ($(window).height / 16 < 22) {
-		alert("Oh noes!");
+		//alert("Oh noes!");
 		$("body").css("font-size", (22 / ($(window).height / (16 * 16)) + "%"));
 	} else {
 		$("body").css("font-size", "100%");
@@ -35,7 +35,7 @@ function gotoDevotional(page) {
 // returns 0 if portrait, 1 if landscape
 function getLayout() {
 	var width = $(window).width();
-	var height = $(window).height();
+	var height = ($(window).height()-64);
 	var ratio = width / height;
 	var layout = (ratio < 1) ? 0 : 1;
 	
@@ -52,11 +52,11 @@ function layoutButtons(layout) {
 			$("button").css("width", "30%");
 			$("button").css("height", $("button").width() + "px");
 		} else {
-			$("button").css("height", $(window).height()/100*22 + "px");
+			$("button").css("height", ($(window).height()-64)/100*22 + "px");
 			$("button").css("width", $("button").height() + "px");
 		}
 		$(".docbutton").css("margin-left", ((($(window).width() - ( $("button").outerWidth() * 3 ) ) / 4 ) - 1));
-		$(".docbutton").css("margin-top", ((($(window).height() - ( $("button").outerHeight() * 4 ) ) / 5 ) - 1));
+		$(".docbutton").css("margin-top", (((($(window).height()-64) - ( $("button").outerHeight() * 4 ) ) / 5 ) - 1));
 		$("button").each(function(i) {
 			if (i % 3 == 0) {
 				$(this).css("clear", "left");
@@ -64,16 +64,16 @@ function layoutButtons(layout) {
 		});
 	} else {
 		// Landscape
-		if (($(window).height() / 3) < ($(window).width() / 4)) {
+		if ((($(window).height()-64) / 3) < ($(window).width() / 4)) {
 			// When the screen's buttons overflow heightwise
-			$("button").css("height", $(window).height()/10*3 + "px");
+			$("button").css("height", ($(window).height()-64)/10*3 + "px");
 			$("button").css("width", $("button").height() + "px");
 		} else {
 			$("button").css("width", "22%");
 			$("button").css("height", $("button").width() + "px");
 		}
 		$(".docbutton").css("margin-left", ((($(window).width() - ( $("button").outerWidth() * 4 ) ) / 5 ) - 1));
-		$(".docbutton").css("margin-top", ((($(window).height() - ( $("button").outerHeight() * 3 ) ) / 4 ) - 1));
+		$(".docbutton").css("margin-top", (((($(window).height()-64) - ( $("button").outerHeight() * 3 ) ) / 4 ) - 1));
 		$("button").each(function(i) {
 			if (i % 4 == 0) {
 				$(this).css("clear", "left");
