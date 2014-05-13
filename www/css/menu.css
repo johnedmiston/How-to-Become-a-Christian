@@ -95,11 +95,11 @@ body {
     right: 0px;
 	z-index: 2;
 	
-	/*
-	 *border: 1px solid black;
-	 *border-bottom-left-radius: 15px;
-	 *border-top: 0;
-	 */
+	
+	 border: 1px solid black;
+	 border-bottom-left-radius: 15px;
+	 border-top: 0;
+	 
 	
 	width: 76px;
 	height: 30px;

@@ -111,3 +111,8 @@ function changePage() {
 	$("#content").toggle();
 	$(document).scrollTop(0);
 }
+
+// This function takes a url and changes the current page to be it
+function redirect(page) {
+    window.location = page;
+}

@@ -1,0 +1,17 @@
+/* Authors: Mark Smullen and Terry Penner
+ * Date Created: May 13, 2014
+ * Purpose: Supports the about.html page
+ */
+
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+    background-color:#333333;
+	
+    height:100%;
+	width:100%;
+	
+    margin:0px;
+    padding:0px;
+}
