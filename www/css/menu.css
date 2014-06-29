@@ -4,49 +4,51 @@
  */
 
 body {
-		margin-top: 76px;
+	margin-top: 76px;
 }
 
 #title {
-		text-align: center;
+	text-align: center;
 }
 
 #about {
-		float: right;
-		padding: 0;
-		margin-right: 6px;
-		
-		width: 64px;
-		height: 64px;
-		background: #333;
-		border-radius: 50%;
-		
-		text-align: center;
-		vertical-align: middle;
-		line-height: 64px;
-		font-size: 32px;
-		font-style: italic;
-		font-family: times, Times New Roman, times-roman, georgia, serif;
-		
-		color: white;
+	float: right;
+	padding: 0;
+	margin-right: 6px;
+
+	width: 64px;
+	height: 64px;
+	background: #333;
+	border-radius: 50%;
+
+	text-align: center;
+	vertical-align: middle;
+	line-height: 64px;
+	font-size: 32px;
+	font-style: italic;
+	font-family: times, Times New Roman, times-roman, georgia, serif;
+	
+	color: white;
 }
 
 #backbutton {
-		float: left;
-		
-		width: 0;
-		height: 0;
-		
-		border-top: 32px solid transparent;
-		border-bottom: 32px solid transparent;
-		border-right: 64px solid #333;
+	float: left;
+
+	width: 0;
+	height: 0;
+
+	border-top: 32px solid transparent;
+	border-bottom: 32px solid transparent;
+	border-right: 64px solid #333;
+	margin-right: 64px;
 }
 
 #backbuttonplaceholder {
-		float: left;
-		
-		width: 128px;
-		height: 64px;
+	float: left;
+
+	width: 64px;
+	height: 64px;
+	margin-right: 64px;
 }
 
 #topmenu {
@@ -99,14 +101,12 @@ body {
 #menudropdown {
     position: absolute;
     top: 73px;
-    right: 0px;
+    right: 5px;
 	z-index: 2;
 	
-	
-	 border: 1px solid black;
-	 border-bottom-left-radius: 15px;
-	 border-top: 0;
-	 
+	border: 1px solid black;
+	border-bottom-left-radius: 15px;
+	border-top: 0;
 	
 	width: 76px;
 	height: 30px;

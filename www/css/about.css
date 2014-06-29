@@ -15,3 +15,34 @@ body {
     margin:0px;
     padding:0px;
 }
+
+.developer-credit {
+	position: fixed;
+	top: 70px;
+	left: 10%;
+	width: 80%;
+}
+
+.developer-credit-text {
+	margin: auto;
+	margin-top: 5%;
+	color: whitesmoke;
+	text-align: center;
+	font-size: 14pt;
+}
+
+.scripture-credit {
+	position: fixed;
+	bottom: 0px;
+	width: 80%;
+	margin-bottom: 5%;
+	left: 10%;
+	max-height: 100%;
+}
+
+.scripture-credit-text {
+	margin: auto;
+	color: whitesmoke;
+	text-align: center;
+	font-size: 14pt;
+}
