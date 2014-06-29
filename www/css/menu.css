@@ -42,6 +42,13 @@ body {
 		border-right: 64px solid #333;
 }
 
+#backbuttonplaceholder {
+		float: left;
+		
+		width: 128px;
+		height: 64px;
+}
+
 #topmenu {
 	position: fixed;
 	top: 0;
