@@ -9,10 +9,19 @@ var percent = 0;
 
 // Font sizes
 var size = {
+	TINY: "10pt",
 	SMALL: "12pt",
-	MEDIUM: "14pt",
-	LARGE: "16pt"
+	NORMAL: "14pt",
+	LARGE: "16pt",
+	HUGE: "18pt"
 };
+
+// Document utilities initialization
+// ****************************************************************************
+$(document).ready(function() {
+	loadDoc();
+	setupMenu();
+});
 
 // Support functions
 // ****************************************************************************
