@@ -116,27 +116,65 @@ body {
 	overflow: scroll;
 }
 
-#font1 {
-	width: 24px;
-	height: 24px;
-	float: right;
-	background-image: url("../img/16pt.png");
+.button {
+	display: inline-block;
+
+	width: 64px;
+	min-width: 64px;
+	height: 64px;
+
+	margin: 3px;
+
+	background-size: cover;
 	background-repeat: no-repeat;
-	margin-bottom: 0;
+	background-position: center center;
 }
 
-#font2 {
-	width: 24px;
-	height: 24px;
-	float: right;
-	background-image: url("../img/19pt.png");
-	background-repeat: no-repeat;
+#themebutton {
+	position: relative;
+	left: -2em;
+
+	background-image: url("../img/sun.png");
 }
 
-#font3 {
-	width: 24px;
-	height: 24px;
-	float: right;
-	background-image: url("../img/22pt.png");
-	background-repeat: no-repeat;
+#fontsizebutton {
+	position: relative;
+	left: 2em;
+
+	background-image: url("../img/fontsize.png");
+}
+
+#fontsizelist {
+	border-top: 1px solid black;
+	margin-top: 15px;
+	padding-top: 15px;
+
+	width: 100%;
+
+	display: none;
+}
+
+.listitem {
+	display: block;
+  text-align: left;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  border: 1px solid black;
+  border-bottom: 0;
+	font-weight: bold;
+	color: black;
+}
+
+.listitem:last-child {
+	border-bottom: 1px solid black;
+}
+
+.listitem span {
+	display: inline-block;
+  vertical-align: middle;
+}
+
+.buttonpressed {
+    background-color: #bbbbbb;
 }
