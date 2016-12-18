@@ -11,28 +11,26 @@
 		<!-- CSS Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/h2bac.css">
 		<link rel="stylesheet" type="text/css" href="css/menu.css">
-		<link rel="stylesheet" type="text/css" href="css/content.css">
-		
+		<link rel="stylesheet" type="text/css" href="css/content.css" id="theme">
+
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/utilities.js"></script>
 		<script type="text/javascript" src="js/h2bac.js"></script>
-		<script type="text/javascript" src="js/textdisplay.js"></script>
-		
+
         <title>How to Become a Christian</title>
     </head>
 	
     <body>
 		<div id="topmenu">
 		    <div id="backbutton" onclick="window.history.back()"></div> <!-- Left-aligned button -->
-		    <div id="menubutton"></div> <!-- Right-aligned button -->
+        <div id="settingsbutton"></div> <!-- Right-aligned button -->
 		    <span id="about" onclick="redirect('about.html')">i</span> <!-- Right-aligned text-->
-		    <span id="title"><h2 style="color: white;">How to Become a Christian</h2></span> <!-- Centered text -->
-		    <div id="menudropdown">
-				<div id="font3" onclick="setScale(size.LARGE)"></div>
-				<div id="font2" onclick="setScale(size.MEDIUM)"></div>
-				<div id="font1" onclick="setScale(size.SMALL)"></div>
-		    </div>
+		    <span id="title"><h2 style="color: white;">Welcome</h2></span> <!-- Centered text -->
+				<div id="settingsdarkbox">
+					<div id="settingspane" data-html="settings"></div>
+				</div>
 		</div>
 		
 		<div style="margin: 0 8px;">

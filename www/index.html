@@ -15,6 +15,7 @@
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
 		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/utilities.js"></script>
 		<script type="text/javascript" src="js/index.js"></script>
 		
 		<title>How to Become a Christian</title>
@@ -24,14 +25,12 @@
 		<!-- Menu functionality -->
 		<div id="topmenu">
 		    <div id="backbuttonplaceholder"></div> <!-- Left-aligned button -->
-		    <div id="menubutton"></div> <!-- Right-aligned button -->
+		    <div id="settingsbutton"></div> <!-- Right-aligned button -->
 		    <span id="about" onclick="redirect('about.html')">i</span> <!-- Right-aligned text-->
 		    <span id="title"><h2 style="color: white;">Welcome</h2></span> <!-- Centered text -->
-		    <div id="menudropdown">
-				<div id="font3" onclick="setScale(size.LARGE)"></div>
-				<div id="font2" onclick="setScale(size.MEDIUM)"></div>
-				<div id="font1" onclick="setScale(size.SMALL)"></div>
-		    </div>
+				<div id="settingsdarkbox">
+					<div id="settingspane" data-html="settings"></div>
+				</div>
 		</div>
 		
 	    <div class="access-content">
