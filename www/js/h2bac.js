@@ -40,10 +40,6 @@ function sendResponse(type, name, country, comments) {
 	);
 }
 
-// Dummy function for document load callback
-function updateProgress() {
-}
-
 // Method called when the form "submit" button is pressed
 function sendForm(e) {
 	e.preventDefault();
