@@ -8,16 +8,14 @@ var responseFormOpen = 0;
 // Document initialization
 // ****************************************************************************
 $(document).ready(function() {
-	loadDoc();
-	setupMenu();
-	
 	// Loading the user's current page at the beginning and setting the text size
 	currentPage = permenantStorage.getItem("page");
 	if (currentPage == null) {
 		currentPage = 2;
 	}
 	setScale(permenantStorage.getItem("font"));
-	
+	setTheme(permenantStorage.getItem("theme"));
+
 	$("#response").on("submit", sendForm);
 });
 
@@ -29,7 +27,7 @@ function sendResponse(type, name, country, comments) {
 	window.plugin.email.isServiceAvailable(
 		function (isAvailable) {
 			window.plugin.email.open({
-				to:          ['terrencepenner@gmail.com'],
+				to:          ['johned@cybermissions.org'],
 				subject:     'H2BAC Response',
 				body:        '<h3>Response</h3><br />' +
 						'<p>Type: ' + type + '</p>' +

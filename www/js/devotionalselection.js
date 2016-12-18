@@ -15,9 +15,7 @@ window.onload = function() {
 
 $(window).resize(function() {
 	layoutButtons(getLayout());
-	//alert($(window).outerHeight(), $(window).outerWidth());
 	if ($(window).height / 16 < 22) {
-		//alert("Oh noes!");
 		$("body").css("font-size", (22 / ($(window).height / (16 * 16)) + "%"));
 	} else {
 		$("body").css("font-size", "100%");
