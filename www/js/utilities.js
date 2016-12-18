@@ -6,6 +6,7 @@
 // ****************************************************************************
 var permenantStorage = window.localStorage;
 var percent = 0;
+var currentTheme;
 
 // Font sizes
 var size = {
@@ -15,6 +16,18 @@ var size = {
 	LARGE: "16pt",
 	HUGE: "18pt"
 };
+
+// Theme options
+var theme = {
+	'LIGHT': {
+		IMG: "img/sun.png",
+		CSS: "css/content.css"
+	},
+	'DARK': {
+		IMG: "img/moon.png",
+		CSS: "css/darkcontent.css"
+	}
+}
 
 // Document utilities initialization
 // ****************************************************************************
@@ -38,17 +51,51 @@ function setScale(fontSize) {
 	$('html, body').animate({scrollTop: pageLoc}, 1);
 }
 
+// Loading display theme based on user's preference
+function setTheme(displayTheme) {
+	if (document.getElementById("theme")) {
+		$("#theme").attr('href', theme[displayTheme].CSS);
+	}
+
+	$("#themebutton").css("background-image", "url('" + theme[displayTheme].IMG + "')");
+	permenantStorage.setItem("theme", displayTheme);
+}
+
 // This function sets the click events for showing and hiding the settings menu
 function setupMenu() {
-	$("#menubutton").click(function() {
-		$("#menudropdown").toggle();
+	sanitizeTheme();
+
+	$("#settingsbutton").click(function() {
+		showSettings();
 	});
-	$(document).click(function(e) {
-		if ($(e.target).is($("#menudropdown").find("*").add($("#menubutton")))) {
-			return false;
+}
+
+// Dummy function for document load callback
+function updateProgress() {
+}
+
+// Sanitize theme setting to prevent falsy and unrecognized values
+function sanitizeTheme() {
+	if (!currentTheme || !theme[currentTheme].IMG) {
+		if (permenantStorage.getItem("theme") == 'DARK') {
+			currentTheme = 'DARK';
+		} else {
+			currentTheme = 'LIGHT';
 		}
-		$("#menudropdown").hide();
-	});
+	}
+
+	setTheme(currentTheme);
+}
+
+// Toggle between day and night themes
+function toggleTheme() {
+	if (currentTheme == 'LIGHT' || currentTheme == null) {
+		currentTheme = 'DARK';
+	} else {
+		currentTheme = 'LIGHT';
+	}
+
+	setTheme(currentTheme);
 }
 
 // From https://gist.github.com/tsi/5137145
