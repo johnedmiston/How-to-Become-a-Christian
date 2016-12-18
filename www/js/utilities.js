@@ -7,6 +7,7 @@
 var permenantStorage = window.localStorage;
 var percent = 0;
 var currentTheme;
+var pressedButton;
 
 // Font sizes
 var size = {
@@ -97,6 +98,49 @@ function toggleTheme() {
 
 	setTheme(currentTheme);
 }
+
+// Display and hide font size list when font button clicked
+function toggleFontsizeList() {
+	$('#fontsizelist').toggle();
+	$("#settingspane").animate({'margin-top': (($(this).height() - $("#settingspane").height()) / 2)});
+	$('#fontsizelist').toggle();
+	$('#fontsizelist').slideToggle();
+}
+
+// Open settings window
+function showSettings() {
+	$("#settingsdarkbox").fadeIn();
+	$("#settingspane").css("margin-top", ($(this).height() - $("#settingspane").height()) / 2);
+	setTheme(currentTheme);
+	$("#fontsizelist").hide();
+}
+
+// Close settings window when focus lost
+function hideSettings() {
+	$("#settingsdarkbox").fadeOut();
+}
+
+// Click events for settings window
+$(document).click(function(e) {
+	if ($(e.target).is($("#settingsdarkbox"))) {
+		hideSettings();
+	}
+});
+
+$(document).on('touchstart mousedown', function(e) {
+	if ($(e.target).is($(".button, .listitem"))) {
+		pressedButton = $(e.target);
+		pressedButton.addClass("buttonpressed");
+	}
+});
+
+$(document).on('mouseup touchend', function(e) {
+	if (!pressedButton) {
+		return;
+	}
+	pressedButton.removeClass("buttonpressed");
+	pressedButton = null;
+});
 
 // From https://gist.github.com/tsi/5137145
 // By tsi
