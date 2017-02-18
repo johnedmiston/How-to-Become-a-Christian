@@ -24,10 +24,10 @@ $(document).ready(function() {
 
 // This function sends the email with the form's values
 function sendResponse(type, name, country, comments) {
-	window.plugin.email.isServiceAvailable(
+	cordova.plugins.email.isAvailable(
 		function (isAvailable) {
-			window.plugin.email.open({
-				to:          ['johned@cybermissions.org'],
+			cordova.plugins.email.open({
+				to:          ['johned@aibi.ph'],
 				subject:     'H2BAC Response',
 				body:        '<h3>Response</h3><br />' +
 						'<p>Type: ' + type + '</p>' +
@@ -43,12 +43,12 @@ function sendResponse(type, name, country, comments) {
 // Method called when the form "submit" button is pressed
 function sendForm(e) {
 	e.preventDefault();
-	
+
 	var type = $("#formRespond").attr("name");
 	var name = $("#formRespond").find("[name='name']").val();
 	var country = $("#formRespond").find("[name='country']").val();
 	var comments = $("#formRespond").find("[name='comments']").val();
-	
+
 	if (name != "") {
 		sendResponse(type, name, country, comments);
 		permenantStorage.setItem("page", 2);
