@@ -41,9 +41,6 @@
         <param name="android-package" value="de.martinreinhardt.cordova.plugins.email.EmailComposer"/>
       </feature>
     </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    </config-file>
     <source-file src="src/android/EmailComposer.java" target-dir="src/de/martinreinhardt/cordova/plugins/email"/>
     <source-file src="src/android/EmailComposerImpl.java" target-dir="src/de/martinreinhardt/cordova/plugins/email"/>
   </platform>
@@ -52,9 +49,6 @@
       <feature name="EmailComposer">
         <param name="android-package" value="de.martinreinhardt.cordova.plugins.email.EmailComposer"/>
       </feature>
-    </config-file>
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     </config-file>
     <source-file src="src/android/EmailComposer.java" target-dir="src/de/martinreinhardt/cordova/plugins/email"/>
     <source-file src="src/android/EmailComposerImpl.java" target-dir="src/de/martinreinhardt/cordova/plugins/email"/>

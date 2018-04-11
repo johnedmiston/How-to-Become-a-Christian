@@ -1,39 +1,22 @@
 {
-    "prepare_queue": {
-        "installed": [],
-        "uninstalled": []
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
     },
-    "config_munge": {
-        "files": {
-            "res/xml/config.xml": {
-                "parents": {
-                    "/*": [
-                        {
-                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.emailcomposer.EmailComposer\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "AndroidManifest.xml": {
-                "parents": {
-                    "application": [
-                        {
-                            "xml": "<provider android:authorities=\"de.appplant.cordova.plugin.emailcomposer.attachmentprovider\" android:name=\"de.appplant.cordova.plugin.emailcomposer.AttachmentProvider\" />",
-                            "count": 1
-                        }
-                    ]
-                }
-            }
-        }
-    },
-    "installed_plugins": {
-        "de.appplant.cordova.plugin.email-composer": {
-            "PACKAGE_NAME": "org.globalchristians.H2BaC"
-        },
-        "cordova-plugin-email": {
-            "PACKAGE_NAME": "org.globalchristians.H2BaC"
-        }
-    },
-    "dependent_plugins": {}
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
+    }
+  },
+  "dependent_plugins": {
+    "de.appplant.cordova.plugin.email-composer": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
+    }
+  }
 }
