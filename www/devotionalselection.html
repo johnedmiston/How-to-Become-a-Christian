@@ -14,7 +14,7 @@
 		
 		<!-- JS Scripts -->
 		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/utilities.js"></script>
 		<script type="text/javascript" src="js/devotionalselection.js"></script>
 		
@@ -25,12 +25,12 @@
 		<!-- Menu functionality -->
 		<div id="topmenu">
 		    <div id="backbutton" onclick="window.history.back()"></div> <!-- Left-aligned button -->
-        <div id="settingsbutton"></div> <!-- Right-aligned button -->
+            <div id="settingsbutton"></div> <!-- Right-aligned button -->
+            <div id="logo"></div> <!-- Left-centered logo image -->
 		    <span id="about" onclick="redirect('about.html')">i</span> <!-- Right-aligned text-->
-		    <span id="title"><h2 style="color: white;">Welcome</h2></span> <!-- Centered text -->
-				<div id="settingsdarkbox">
-					<div id="settingspane" data-html="settings"></div>
-				</div>
+		    <div id="settingsdarkbox">
+                <div id="settingspane" data-html="settings"></div>
+            </div>
 		</div>
 
 		<div id="container">
