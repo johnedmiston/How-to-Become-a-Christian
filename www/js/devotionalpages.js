@@ -62,7 +62,7 @@ $(document).ready(function() {
 	});
 	
 	// Making sure that scrolling up and down is still enabled
-	$("#content").on('movestart', function(e) {
+	$("#content").mousemove(function(e) {
 		if ((e.distX > e.distY && e.distX < -e.distY) ||
 		(e.distX < e.distY && e.distX > -e.distY)) {
 			e.preventDefault();
