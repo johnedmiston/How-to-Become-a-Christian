@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="org.globalchristians.H2BaC" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="org.globalchristians.H2BaC" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>H2BAC</name>
-	<icon src="icon.png" />
+    <icon src="icon.png" />
     <description>
         An app that explains how to become a Christian, and what it means to be a Christian.
     </description>
@@ -10,6 +10,6 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <engine name="android" spec="~6.2.3" />
     <plugin name="cordova-plugin-email" spec="^1.2.6" />
+    <engine name="android" spec="~6.2.3" />
 </widget>
