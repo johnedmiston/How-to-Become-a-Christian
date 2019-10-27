@@ -1,0 +1,22 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-email": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
+    }
+  },
+  "dependent_plugins": {
+    "de.appplant.cordova.plugin.email-composer": {
+      "PACKAGE_NAME": "org.globalchristians.H2BaC"
+    }
+  }
+}

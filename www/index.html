@@ -24,20 +24,20 @@
 	<body style="-webkit-touch-callout: none;">
 		<!-- Menu functionality -->
 		<div id="topmenu">
-		    <div id="backbutton" class="placeholder"></div> <!-- Left-aligned button -->
-		    <div id="settingsbutton" class="placeholder"></div> <!-- Right-aligned button -->
-            <div id="logo"></div> <!-- Left-centered logo image -->
-		    <span id="about" onclick="redirect('about.html')">i</span> <!-- Right-aligned text-->
-		    <span id="title"><h2>Welcome</h2></span> <!-- Centered text -->
-            <div id="settingsdarkbox">
-                <div id="settingspane" data-html="settings"></div>
-            </div>
+			<img id="logo" src="../img/logo.png" onclick="redirect('index.html')"/>
+		    <div id="about" onclick="redirect('about.html')">i</div>
 		</div>
 		
 	    <div class="access-content">
 			<div class="access-content-buttons">
-				<button id="h2bac" class="access-content-button" onclick="redirect('h2bac.html')">How to Become a Christian</button>
-				<button id="devos" class="access-content-button" onclick="checkCompletion()">Lessons and Devotionals</button>
+				<button id="h2bac" class="access-content-button" onclick="redirect('h2bac.html')">
+					<img class="buttonIcon" src="img/ic_cross.png"><br>
+					How to Become a Christian
+				</button>
+				<button id="devos" class="access-content-button" onclick="checkCompletion()">
+					<img class="buttonIcon" src="img/ic_bible.png"><br>
+					Lessons and Devotionals
+				</button>
 			</div>
 	    </div>
 	</body>

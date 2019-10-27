@@ -8,3 +8,7 @@ var permenantStorage = window.localStorage;
 
 // Support functions
 // ****************************************************************************
+// This function takes a url and changes the current page to be it
+function redirect(page) {
+    window.location = page;
+}
