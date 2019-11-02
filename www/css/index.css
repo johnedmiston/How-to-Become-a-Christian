@@ -47,12 +47,12 @@ body {
     background-color: white;
     border: 1px solid lightgray;
     width: 50%;
-    height: 80px;
+    height: 200px;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     color: rgb(9, 125, 219);
 }
 
 .buttonIcon {
-    height: 20px;
+    height: 40px;
 }
