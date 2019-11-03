@@ -25,10 +25,10 @@
     <body>
 		<div id="topmenu">
 		    <div id="backbutton" onclick="window.history.back()"></div> <!-- Left-aligned button -->
-            <div id="settingsbutton"></div> <!-- Right-aligned button -->
-            <div id="logo"></div> <!-- Left-centered logo image -->
-		    <span id="about" onclick="redirect('about.html')">i</span> <!-- Right-aligned text-->
-		    <div id="settingsdarkbox">
+			<img id="logo" src="../img/logo.png" onclick="redirect('index.html')"/>
+			<div id="about" onclick="redirect('about.html')">i</div>
+			<img id="settingsbutton" src="../img/settings.png"></div>
+			<div id="settingsdarkbox">
                 <div id="settingspane" data-html="settings"></div>
             </div>
 		</div>
@@ -38,12 +38,12 @@
 		    <br />
 		    <p>If you have prayed the prayer:</p>
 		    <p>
-			<div style="margin: auto; text-align: center;">
-			    <button type="submit" name="response" value="firsttime" onclick="openResponse('firsttime')"> I have decided to become a<br />Christian for the first time.</button>
-			    <button type="submit" name="response" value="recommit" onclick="openResponse('recommit')"> I am recommitting my life to<br />Christ after being away from God.</button>
-			    <button type="submit" name="response" value="doubts" onclick="openResponse('doubts')"> I still have some doubts or questions.</button>
-			    <button type="submit" name="response" value="strong" onclick="openResponse('strong')"> I am already a strong Christian.</button>
-			    <button type="submit" name="response" value="notnow" onclick="redirect('devotionalpages.html')">No thanks, not right now.</button>
+			<div class="prayButtons">
+			    <div class="prayButton" name="response" value="firsttime" onclick="openResponse('firsttime')"> I have decided to become a Christian</div>
+			    <div class="prayButton" name="response" value="recommit" onclick="openResponse('recommit')"> I am recommitting my life to Christ</div>
+			    <div class="prayButton" name="response" value="doubts" onclick="openResponse('doubts')">I still have some doubts</div>
+			    <div class="prayButton" name="response" value="strong" onclick="openResponse('strong')"> I am already a strong Christian</div>
+			    <div class="prayButton" name="response" value="notnow" onclick="redirect('devotionalpages.html')">No thanks, not right now</div>
 			</div>
 		    </p>
 		    <div id="darkbox">

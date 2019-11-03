@@ -8,7 +8,6 @@ body {
 }
 
 #topmenu {
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
@@ -18,9 +17,15 @@ body {
 
     padding: 4px;
     background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 10px 100px 1fr 60px 60px;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        "back home empty setting info";
 }
 
 #backbutton {
+    grid-area: back;
     float: left;
     height: 100%;
     cursor: pointer;
@@ -31,13 +36,14 @@ body {
 }
 
 #logo {
+    grid-area: home;
     width: auto;
     height: 80%;
     margin: 5px 10px;
 }
 
 #about {
-    float: right;
+    grid-area: info;
     padding: 0;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -56,6 +62,14 @@ body {
     font-family: times, Times New Roman, times-roman, georgia, serif;
 
     color: rgb(9, 125, 219);
+}
+
+#settingsbutton {
+    grid-area: setting;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #title {
@@ -79,23 +93,6 @@ body {
 
 .placeholder {
     visibility: none;
-}
-
-
-
-/* SETTINGS STYLING */
-
-#settingsbutton {
-    float: right;
-    z-index: 3;
-    width: 64px;
-    min-width: 64px;
-    height: 64px;
-    height: 100%;
-    background-image: url("../img/settings.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
 }
 
 #settingsdarkbox {
