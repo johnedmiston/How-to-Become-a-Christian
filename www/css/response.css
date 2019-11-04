@@ -1,0 +1,21 @@
+input {
+    width: 80%;
+    height: 30px;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 80%;
+    height: 80px;
+    margin: 2px 0;
+    font-size: 14px;
+    border-radius: 5px;;
+}
+
+input[type="submit"] {
+    background-color: rgb(9, 125, 219);
+    color: white;
+    border-radius: 5px;
+}
