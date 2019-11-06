@@ -5,45 +5,53 @@
 
 html {
     height: 100%;
-}
-
-body {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    user-select: none;
-    background-color: #333333;
-    background-image: url(../img/bridge.png);
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;
-    width: 100%;
     margin: 0;
     padding: 0;
 }
 
+body {
+    height: 100vh;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: #333333;
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    background-position: 50% 0%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 50px;
+    grid-template-columns: 100%;
+}
+
 .access-content {
     position: fixed;
-    z-index: -1;
     bottom: 0;
+    left: 0;
     width: 100%;
-    max-height: 100%;
 }
 
 .access-content-buttons {
     float: left;
-    margin-bottom: 2%;
-    margin-left: 20%;
-    padding-top: 10%;
-    width: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 .access-content-button {
-    display: block;
-    border: 0 solid black;
-    background-color: #E6E6E6;
-    width: 100%;
-    height: 60px;
-    margin: 4% auto;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 50%;
+    height: 200px;
     text-align: center;
     font-size: 1.5em;
+    color: rgb(9, 125, 219);
+}
+
+.buttonIcon {
+    height: 40px;
 }

@@ -11,16 +11,18 @@
 
 body {
     color: white;
-    background-color: #222222;
-    font-size: 12pt;
+    background-color:#333333;
+    font-size: 16pt;
 }
 
 #content {
+    color: white;
+    background-color:#333333;
     margin: auto;
 }
 
 b,h1,h2,h3 {
-    color: #dd2222;
+    color: rgb(9, 125, 219);
 }
 
 p {
@@ -29,12 +31,12 @@ p {
 }
 
 .scripture {
-    color: #7f0;
+    color: rgb(209, 127, 80);
     font-style: italic;
 }
 
 .scriptref {
-    color: #7f0;
+    color: rgb(209, 127, 80);
     text-align: right;
     margin: 0 0 6px;
 }
@@ -42,4 +44,30 @@ p {
 .indent {
     text-align: left;
     margin: 0 0 0 2em;
+}
+
+.prayButtons {
+    float: left;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+}
+
+.prayButton {
+    background-color: rgb(9, 125, 219);
+    border-radius: 5px;
+    width: 95%;
+    height: 50px;
+    padding: 5px 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: em;
+    color: white;
+    line-height: 50px;
+    padding: 15px;        
+    border: 1px solid #666;
+}
+
+.buttonText {
+    margin: auto auto;
 }
